@@ -1,0 +1,51 @@
+{
+  "mcpServers": {
+    "al-kindi-ai": {
+      "command": "cargo",
+      "args": [
+        "run",
+        "--release",
+        "--quiet"
+      ],
+      "env": {
+        "RUST_LOG": "info",
+        "TITAN_PROTOCOL": "KINDI",
+        "TARGET_CHAIN": "Solana",
+        "FIPS_203_LEVEL": "ML-KEM-768",
+        "FIPS_204_LEVEL": "ML-DSA-65"
+      },
+      "tools": [
+        {
+          "name": "analyze_monalphabetic_frequencies",
+          "description": "Computes letter frequency distributions and polyalphabetic cipher entropy",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "ciphertext_hex": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "ciphertext_hex"
+            ]
+          }
+        },
+        {
+          "name": "simulate_optical_ray_propagation",
+          "description": "Solves rectilinear propagation and angle-of-incidence refraction vectors",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "incident_angle": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "incident_angle"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
